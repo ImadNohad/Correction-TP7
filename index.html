@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>TP7</title>
+  </head>
+  <body>
+    <div class="logo"><img src="images/logo.svg" alt=""></div>
+    <div class="wrapper">
+      <div class="left">
+        <label>Bill</label>
+        <input type="text" name="bill" id="bill" value="0" />
+
+        <label>Select Tip %</label>
+        <div class="percentages">
+          <div><button class="percentage" value="0.05">5%</button></div>
+          <div><button class="percentage" value="0.10">10%</button></div>
+          <div><button class="percentage" value="0.15">15%</button></div>
+          <div><button class="percentage" value="0.25">25%</button></div>
+          <div><button class="percentage" value="0.5">50%</button></div>
+          <div><input id="custom" class="custom" type="text" placeholder="Custom"></input></div>
+        </div>
+        
+          <div class="numPeople">
+            <label>Number of People</label><small>Can't be zero</small>
+            <input type="text" name="numPeople" id="numPeople" value="0" />
+          </div>
+      </div>
+      <div class="right">
+        <div class="results">
+          <div>
+            <div class="amount">Tip Amount </div>
+            <div class="person">/ person</div>
+          </div>
+  
+          <div id="tip" class="result">$0.00</div>
+  
+          <div>
+            <div class="amount">Total </div>
+            <div class="person">/ person</div>
+          </div>
+  
+          <div id="total" class="result">$0.00</div>
+        </div>
+
+        <button id="reset" class="reset">Reset</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -46,7 +46,7 @@ button:hover {
 	color: hsl(183, 100%, 15%);
 }
 
-button:focus {
+.active {
 	background-color: hsl(172, 67%, 45%);
 	color: hsl(183, 100%, 15%);
 }
@@ -155,11 +155,16 @@ small {
 	gap: 1rem;
 	align-items: center;
 	text-align: justify;
-	margin-bottom: 3.5rem;
+	margin-bottom: 4rem;
 }
 
 .reset {
-	margin-top: 3rem;
+	margin-top: 4rem;
+	background-color: hsl(172, 67%, 45%);
+	color: hsl(183, 100%, 15%);
+}
+
+.reset.active {
 	background-color: hsl(172, 67%, 45%);
 	color: hsl(183, 100%, 15%);
 }

@@ -5,32 +5,25 @@ let tip = document.getElementById("tip");
 let total = document.getElementById("total");
 let reset = document.getElementById("reset");
 let numPeopleDiv = document.querySelector(".numPeople");
-let billValue = 0;
-let numPeopleValue = 0;
+let buttons = document.querySelectorAll(".percentage");
 let tipPercentage = 0;
 
-function calculate() {
-	billValue = parseFloat(bill.value);
-	numPeopleValue = parseInt(numPeople.value);
-
+function calculate(billValue, numPeopleValue, percent) {
 	let tipAmount = 0;
 	let totalPP = 0;
+	tip.textContent = `$0.00`;
+	total.textContent = `$0.00`;
 
-	if (custom.value !== "") tipPercentage = parseFloat(custom.value / 100);
+	console.log(numPeopleValue);
 
-	if (numPeopleValue === 0) {
+	if (numPeopleValue == 0) {
 		numPeopleDiv.classList.add("error");
 	} else {
 		numPeopleDiv.classList.remove("error");
 	}
 
-	if (
-		!isNaN(billValue) &&
-		!isNaN(numPeopleValue) &&
-		numPeopleValue !== 0 &&
-		tipPercentage !== 0
-	) {
-		tipAmount = (billValue * tipPercentage) / numPeopleValue;
+	if (!isNaN(billValue) && !isNaN(numPeopleValue) && numPeopleValue > 0) {
+		tipAmount = (billValue * percent) / numPeopleValue;
 		totalPP = billValue / numPeopleValue + tipAmount;
 
 		tip.textContent = `$${tipAmount.toFixed(2)}`;
@@ -38,17 +31,31 @@ function calculate() {
 	}
 }
 
-document.querySelectorAll(".percentage").forEach((el) => {
+function removeActive(buttons) {
+	buttons.forEach((el) => {
+		el.classList.remove("active");
+	});
+}
+
+buttons.forEach((el) => {
 	el.addEventListener("click", function (e) {
 		custom.value = "";
 		tipPercentage = parseFloat(e.target.value);
-		if (billValue !== "" && numPeopleValue !== "") calculate();
+		if (bill.value !== "" && numPeople.value !== "") {
+			calculate(bill.value, numPeople.value, tipPercentage);
+		}
+		removeActive(buttons);
+		e.target.classList.add("active");
 	});
 });
 
 [bill, numPeople, custom].forEach((el) => {
-	el.addEventListener("keyup", function () {
-		calculate();
+	el.addEventListener("keyup", function (e) {
+		if (e.target.id === "custom") {
+			tipPercentage = parseFloat(custom.value / 100);
+			removeActive(buttons);
+		}
+		calculate(bill.value, numPeople.value, tipPercentage);
 	});
 });
 

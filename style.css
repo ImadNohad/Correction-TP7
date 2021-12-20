@@ -117,14 +117,14 @@ small {
 
 #bill {
 	margin-bottom: 2.25rem;
-	background-image: url("/images/icon-dollar.svg");
+	background-image: url("./images/icon-dollar.svg");
 	background-repeat: no-repeat;
 	background-position: 3% center;
 	background-size: 2.5%;
 }
 
 #numPeople {
-	background-image: url("/images/icon-person.svg");
+	background-image: url("./images/icon-person.svg");
 	background-repeat: no-repeat;
 	background-position: 3% center;
 	background-size: 3%;

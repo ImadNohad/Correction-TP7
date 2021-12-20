@@ -66,4 +66,5 @@ reset.addEventListener("click", function (e) {
 	tip.textContent = "$0.00";
 	total.textContent = "$0.00";
 	numPeopleDiv.classList.remove("error");
+	removeActive(buttons);
 });

@@ -41,9 +41,9 @@ buttons.forEach((el) => {
 	el.addEventListener("click", function (e) {
 		custom.value = "";
 		tipPercentage = parseFloat(e.target.value);
-		if (bill.value !== "" && numPeople.value !== "") {
-			calculate(bill.value, numPeople.value, tipPercentage);
-		}
+		//if (bill.value !== "" && numPeople.value !== "") {
+		calculate(bill.value, numPeople.value, tipPercentage);
+		//}
 		removeActive(buttons);
 		e.target.classList.add("active");
 	});

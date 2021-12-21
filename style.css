@@ -75,12 +75,12 @@ small {
 	font-size: 0.75rem;
 	font-weight: 700;
 	float: right;
-	color: rgb(182, 131, 114);
+	color: rgb(231, 78, 26);
 	visibility: visible;
 }
 
 .error input {
-	outline: 2px solid rgb(182, 131, 114);
+	outline: 2px solid rgb(231, 78, 26);
 }
 
 .wrapper {
